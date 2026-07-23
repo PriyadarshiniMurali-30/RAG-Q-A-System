@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from dotenv import load_dotenv
 from google import genai
 from groq import Groq
@@ -6,8 +7,15 @@ import chromadb
 from pypdf import PdfReader
 
 load_dotenv()
-gemini_client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
-groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+
+def get_secret(key):
+    """Read from Streamlit secrets if available (cloud), else from .env (local)."""
+    if hasattr(st, "secrets") and key in st.secrets:
+        return st.secrets[key]
+    return os.getenv(key)
+
+gemini_client = genai.Client(api_key=get_secret("GEMINI_API_KEY"))
+groq_client = Groq(api_key=get_secret("GROQ_API_KEY"))
 
 chroma_client = chromadb.PersistentClient(path="./chroma_db")
 
