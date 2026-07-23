@@ -2,8 +2,8 @@
 
 A Retrieval-Augmented Generation (RAG) system that answers questions about any uploaded PDF using grounded, cited answers — built to avoid hallucination by only answering from retrieved source content.
 
-**🔗 Live Demo**: [Add your Streamlit Cloud URL here]
-**📂 Repo**: [Add your GitHub URL here]
+**🔗 Live Demo**: [https://rag-qna-pdf.streamlit.app/]
+**📂 Repo**: [https://github.com/PriyadarshiniMurali-30/RAG-Q-A-System/]
 
 ## What it does
 
@@ -14,12 +14,11 @@ Upload any PDF through the web interface, ask questions in plain English, and ge
 
 ## Demo
 
-![Streamlit UI screenshot](screenshot.png)
-*Upload a PDF, click "Process Document," then ask questions with cited, verifiable answers.*
+<img width="1572" height="882" alt="RAG-qa" src="https://github.com/user-attachments/assets/2c21357e-e1ff-41f8-a9ce-92a90ff47f42" />
 
-*(Add a screenshot of your running app here — drag an image into the GitHub README editor, or save one as `screenshot.png` in the repo root.)*
 
 ## Architecture
+
 
 ```
 PDF Upload (Streamlit UI)
@@ -117,6 +116,5 @@ Deployed on **Streamlit Community Cloud**, connected directly to this GitHub rep
 
 - Semantic chunking (split by document section/headers instead of fixed word count)
 - Support for multiple documents with metadata filtering
-- Streaming responses for faster perceived latency
 - Larger, more adversarial eval set (multi-hop questions, ambiguous phrasing, conflicting sources)
 - Persistent vector storage across sessions (currently re-ingests per upload)
