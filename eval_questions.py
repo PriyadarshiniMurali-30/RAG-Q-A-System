@@ -32,6 +32,10 @@ EVAL_QUESTIONS = [
         "expected_answer": "dean.ar@vit.ac.in"
     },
     {
+            "question": "Is there VIT in Salem?",
+            "expected_answer": "No"
+    },
+    {
         "question": "What is the tuition fee per annum for Direct Ph.D.?",
         "expected_answer": "₹40,000"
     },

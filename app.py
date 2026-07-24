@@ -40,8 +40,8 @@ if st.session_state.ingested:
         st.write(result["answer"])
 
         with st.expander("📚 View source chunks"):
-            for i, chunk in enumerate(result["sources"]):
+            for i, chunk in enumerate(result["highlighted_sources"]):
                 st.markdown(f"**[{i+1}]**")
-                st.text(chunk)
+                st.markdown(chunk, unsafe_allow_html=True)
 else:
     st.info("👆 Upload and process a PDF to get started.")
